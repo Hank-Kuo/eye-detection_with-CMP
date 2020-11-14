@@ -1,0 +1,143 @@
+<html>
+
+<head>
+  <style>
+    .div_left1 {
+      position: absolute;
+      top: 40px;
+      left: 455px;
+    }
+
+    .div_right1 {
+      position: absolute;
+      top: 40PX;
+      left: 535px;
+    }
+
+    .div_flash_left1 {
+      position: absolute;
+      top: 145px;
+      left: 455px;
+    }
+
+    .div_flash_right1 {
+      position: absolute;
+      top: 145px;
+      left: 535px;
+    }
+
+    .div_yellow_left1 {
+      position: absolute;
+      top: 245px;
+      left: 490px;
+    }
+
+
+    .div_fly_left1 {
+      position: absolute;
+      top: 345px;
+      left: 490px;
+    }
+
+    .div_blind_left1 {
+      position: absolute;
+      top: 445px;
+      left: 490px;
+    }
+
+    .p {
+      position: absolute;
+      top: -4;
+      left: -9;
+    }
+
+    h1,
+    h2 {
+      font-family: Microsoft JhengHei;
+    }
+
+    .button2 {
+      height: 80px;
+      width: 150px;
+      font-size: 22px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #9B823E;
+      background-color: #FFBA00;
+      border: none;
+      border-radius: 0px;
+      box-shadow: 0 3px #999;
+    }
+
+    .button2:hover {
+      background-color: #FFE45F
+    }
+
+    .button2:active {
+      background-color: #FF4081;
+      box-shadow: 0 1px #666;
+      transform: translateY(3px);
+    }
+
+  </style>
+</head>
+
+<body background="images/bkg_historycheck.png">
+  <div>
+    <a href="index.html"><img class="p" style="cursor:pointer" src="images/btn_backtohome.png"></a>
+  </div>
+  <div class="div_left1">
+    <h1 id="eye_left1"></h1>
+  </div>
+  <div class="div_right1">
+    <h1 id="eye_right1"></h1>
+  </div>
+
+  <div class="div_flash_left1">
+    <h2 id="eye_flash_left1"></h2>
+  </div>
+
+  <div class="div_flash_right1">
+    <h2 id="eye_flash_right1"></h2>
+  </div>
+
+  <div class="div_yellow_left1">
+    <h2 id="eye_yello_left1"></h2>
+  </div>
+
+  <div class="div_fly_left1">
+    <h2 id="eye_fly_left1"></h2>
+  </div>
+
+  <div class="div_blind_left1">
+    <h2 id="eye_blind_left1"></h2>
+  </div>
+  <a href="chooseclinic.html"><button class="button2" id="btn_relaxureye" style="font-family:Microsoft JhengHei;margin-left:81%;margin-top:46%">診所掛號</button></a>
+
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB3RG9-49l74BOv0FEyLn5sHI6duZlSpwQ",
+      authDomain: "eye-detection-6fd57.firebaseapp.com",
+      databaseURL: "https://eye-detection-6fd57.firebaseio.com",
+      projectId: "eye-detection-6fd57",
+      storageBucket: "eye-detection-6fd57.appspot.com",
+      messagingSenderId: "882742229686"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
+  <script src="eyetest_info.js"></script>
+</body>
+
+</html>

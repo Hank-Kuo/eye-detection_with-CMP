@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+      * {
+        box-sizing: border-box;
+      }
+
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      label {
+        padding: 10px 12px 12px 40px;
+        display: inline-block;
+      }
+
+
+    button[type=submit] {
+      background-color: #E4D154;
+      color: #606060;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    input[type=submit]:hover {
+      background-color: #FDE01C;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: rgba(194,229,223,0.5);
+      padding: 20px;
+    }
+    .container1 {
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 20%;
+      margin-top: 5px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    .col-751 {
+      float: left;
+      width: 10%;
+      margin-top: 0;
+    }
+
+    .p{
+      position: absolute;
+      top: -1.6px;
+      left: -8.6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    #dialogoverlay{
+    	display: none;
+    	opacity: .8;
+    	position: fixed;
+    	top: 0px;
+    	left: 0px;
+    	background: #FFF;
+    	width: 100%;
+    	z-index: 10;
+    }
+    #dialogbox{
+    	display: none;
+    	position: fixed;
+    	background: #AAAAAA;
+    	border-radius:1px;
+    	width:450px;
+    	z-index: 10;
+    }
+    #dialogbox > div{ background:	#AAAAAA; margin:3px; }
+    #dialogbox > div > #dialogboxhead{ background: 	#FFFFFF	; font-size:19px; padding:10px; color:	#000000; }
+    #dialogbox > div > #dialogboxbody{ background:	#FFFFFF		; padding:10px;font-size:19px; color:	#000000; }
+    #dialogbox > div > #dialogboxfoot{ background: 		#DDDDDD; padding:10px; text-align:right; }
+
+
+</style>
+</head>
+
+<body background="images/bkg_test.png">
+
+<a href="calendar.html"><img class="p" style="cursor:pointer" src="images/btn_back.png"></a>
+
+<div class="container">
+
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">日期</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="date1" name="firstname" >
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">姓名</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="ex.王大明">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">電話:</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="phonename" name="lastname" placeholder="09XX-000-000.">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">今天是來:</label>
+        </div>
+        <div class="col-75">
+          <select id="country" name="country">
+            <option value="australia">看診</option>
+            <option value="canada">定期檢查</option>
+            <option value="usa">用藥諮詢</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="col-25">
+          <label for="lname">藥物使用:</label>
+        </div>
+        <label class="container1" style="margin-top:1px;margin-left:-2%">
+          <input type="checkbox" checked="checked">無
+        </label>
+        <label class="container1">
+          <input type="checkbox">有:
+        </label>
+        <input id="medical" style="width:25%;margin-left:-2%" type="text">
+      </div>
+
+
+        <div class="col-25">
+          <label for="lname">有無過敏:</label>
+        </div>
+        <label class="container1" style="margin-top:1px;margin-left:-2%">
+          <input type="checkbox" checked="checked">無
+        </label>
+        <label class="container1">
+          <input type="checkbox">有:
+        </label>
+        <input id="allergic"  style="width:25%;margin-left:-2%" type="text">
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">疾病史:</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lbox" name="lastname" placeholder="">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">今天眼睛有甚麼問題:</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="subject" placeholder="Write something" style="height:70px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <button id="Submit1" onclick="Alert.render()" type="submit" name="Submit">送出</button>
+      </div>
+  </div>
+
+  <div id="dialogoverlay"></div>
+  <div id="dialogbox">
+    <div>
+      <div id="dialogboxhead"></div>
+      <div id="dialogboxbody"></div>
+      <div id="dialogboxfoot"></div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB3RG9-49l74BOv0FEyLn5sHI6duZlSpwQ",
+      authDomain: "eye-detection-6fd57.firebaseapp.com",
+      databaseURL: "https://eye-detection-6fd57.firebaseio.com",
+      projectId: "eye-detection-6fd57",
+      storageBucket: "eye-detection-6fd57.appspot.com",
+      messagingSenderId: "882742229686"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="medicalrecord.js"></script>
+  <script>
+  function CustomAlert(){
+      this.render = function(){
+          var winW = window.innerWidth;
+          var winH = window.innerHeight;
+          var dialogoverlay = document.getElementById('dialogoverlay');
+          var dialogbox = document.getElementById('dialogbox');
+          dialogoverlay.style.display = "block";
+          dialogoverlay.style.height = winH+"px";
+          dialogbox.style.left = "30%";
+          dialogbox.style.top = "175px";
+          dialogbox.style.display = "block";
+          document.getElementById('dialogboxhead').innerHTML = '請於 '+date2+' 14:00看診 您的號碼為12號';
+          document.getElementById('dialogboxbody').innerHTML = "您的醫師: 李加崴";
+          document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+      }
+  	this.ok = function(){
+  		document.getElementById('dialogbox').style.display = "none";
+  		document.getElementById('dialogoverlay').style.display = "none";
+      return document.location.href = 'index.html';
+  	}
+  }
+  var Alert = new CustomAlert();
+  </script>
+
+
+</body>
+
+</html>

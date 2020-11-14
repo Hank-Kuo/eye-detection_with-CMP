@@ -1,0 +1,125 @@
+<html>
+<head>
+  <title>Login</title>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" /> -->
+  <style>
+
+  /* Full-width input fields */
+  input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  /* Set a style for all buttons */
+  button {
+    background-color: #FFBA00;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+
+
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+
+
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color:rgba(0,170,141,0.4);
+    margin: 5% auto 30% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 0.5px solid #008975;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+
+
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+
+  @keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+  span{float:right}
+
+
+  </style>
+</head>
+
+<body background="images/bkg_test.png">
+
+  <div id="login_div" class="container modal-content animate">
+
+
+  <label for="uname"><b>帳號</b></label>
+  <input type="email" placeholder="Email" id="email_field" required />
+  <label for="psw"><b>密碼</b></label>
+  <input type="password" placeholder="Password" id="password_field" required/>
+  <button onclick="login()">Login</button>
+  <label>
+        <input type="checkbox" checked="checked" name="remember">記住我
+  </label>
+  <div class="container" >
+      <span>點我 <a href="register.html">註冊帳號！</a></span>
+  </div>
+</div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB3RG9-49l74BOv0FEyLn5sHI6duZlSpwQ",
+      authDomain: "eye-detection-6fd57.firebaseapp.com",
+      databaseURL: "https://eye-detection-6fd57.firebaseio.com",
+      projectId: "eye-detection-6fd57",
+      storageBucket: "eye-detection-6fd57.appspot.com",
+      messagingSenderId: "882742229686"
+    };
+    firebase.initializeApp(config);
+    const auth=firebase.auth();
+    const db =firebase.firestore();
+  </script>
+  <script src="login.js"></script>
+
+</body>
+</html>

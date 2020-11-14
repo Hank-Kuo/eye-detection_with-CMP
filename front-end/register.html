@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>firebase register</title>
+
+  <style>
+      body
+      * {
+        box-sizing: border-box;
+      }
+      /* Add padding to containers */
+      .container {
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #888;
+        background-color:rgba(0,170,141,0.4);
+        border: 0.5px solid #008975;
+      }
+
+      /* Full-width input fields */
+      input[type=text], input[type=password], input[type=email], input[type=name], input[type=birthday], input[type=identity]
+       {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type=text]:focus, input[type=password], input[type=email], input[type=name], input[type=birthday], input[type=identity]:focus
+      {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 5px;
+      }
+
+      /* Set a style for the submit button */
+      .registerbtn {
+        background-color: #FFBA00;
+        color: white;
+        padding: 10px 15px;
+        margin: 0px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      .registerbtn:hover {
+        opacity: 1;
+      }
+
+      /* Add a blue text color to links */
+      a {
+        color:#0D00AF ;
+      }
+
+       p{
+          text-align: center;
+        }
+
+      .j {
+          width: 60%;
+
+          }
+      h1 {
+        margin: 0px 0 5px 0;
+      }
+  </style>
+
+</head>
+
+<body background="images/bkg_test.png">
+  <div class="container j" style="margin:0 auto">
+    <h1 style="font-family:Microsoft JhengHei;">註冊</h1>
+    <form  id="form">
+      <label for="email" style="font-family:Microsoft JhengHei;"><b>信箱</b></label>
+      <input id="txtEmail" type="email" placeholder="輸入信箱" required>
+
+      <label for="psw" style="font-family:Microsoft JhengHei;"><b>密碼</b></label>
+      <input id="txtPassword" type="password" placeholder="輸入密碼" required>
+
+      <label for="name" style="font-family:Microsoft JhengHei;"><b>姓名</b></label>
+      <input id="txtName" type="name" placeholder="姓名" required>
+
+      <label for="name" style="font-family:Microsoft JhengHei;"><b>生日</b></label>
+      <input id="txtBirthday" type="birthday" placeholder="yyyy/mm/dd" required>
+
+      <label for="name" style="font-family:Microsoft JhengHei;"><b>身分證字號</b></label>
+      <input id="txtIdentity" type="identity" placeholder="A000000000" required>
+
+
+      <button type="submit" class="registerbtn">送出</button>
+      <p>已經有帳號？<a href="login.html">登入</a>.</p>
+
+  </form>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB3RG9-49l74BOv0FEyLn5sHI6duZlSpwQ",
+      authDomain: "eye-detection-6fd57.firebaseapp.com",
+      databaseURL: "https://eye-detection-6fd57.firebaseio.com",
+      projectId: "eye-detection-6fd57",
+      storageBucket: "eye-detection-6fd57.appspot.com",
+      messagingSenderId: "882742229686"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="register.js"></script>
+
+</body>
+
+</html>

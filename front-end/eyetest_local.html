@@ -1,0 +1,70 @@
+<html>
+<script src="eyetest_local.js"></script>
+  <head>
+
+    <style>
+      .button2 {
+        height: 210px;
+        width: 260px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #008975;
+        border: none;
+        border-radius: 2px;
+        box-shadow: 0 2px #5F5F5F;
+      }
+
+      .button2:hover {
+        background-color: #00BF9A
+      }
+
+      .button2:active {
+        background-color: #00BF9A;
+        box-shadow: 0 1px #666;
+        transform: translateY(8px);
+      }
+
+      .p{
+        position: absolute;
+        top: -2;
+        left: -8;
+      }
+      .cl{
+        position: absolute;
+        top: 10;
+        left: 86%;
+      }
+
+    </style>
+
+  </head>
+
+
+
+  <body background="images/bkg_test.png">
+      <div>
+        <a href="index.html"><img class="p" style="cursor:pointer" src="images/btn_backtohome.png"></a>
+      </div>
+      <a ><button class="button2" style="margin-left:5.5%;margin-top:5%" onclick="test()">全套測驗</button></a>
+      <button class="button2" style="margin-left:3%">近,遠視</button>
+      <button class="button2" style="margin-left:3%">黃斑部病變檢測</button>
+      <button class="button2" style="margin-left:5.5%;margin-top:3.6%">色盲檢測</button>
+      <button class="button2" style="margin-left:3%">閃光檢測</button>
+      <button class="button2" style="margin-left:3%">飛蚊症檢測</button>
+
+      <div>
+        <a href="eyetest.html"><img class="cl" style="cursor:pointer" src="images/btn_testcloud.png"></a>
+        <a href="eyetest_local.html"><img class="cl" style="cursor:pointer;margin-left:40px" src="images/btn_testlocal.png"></a>
+      </div>
+
+
+
+
+
+  </body>
+
+
+</html>

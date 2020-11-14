@@ -1,0 +1,302 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+		 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCDGcgsGX1LPOnPQa7fR9NEVjw294UkiJQ">
+		 </script>
+     <script>
+		 var map;
+		 var infowindow
+		 var request;
+		 var service;
+		 var markers=[];
+
+
+
+		 function initialize(){
+
+		     var center=new google.maps.LatLng(25.038776,121.432744);
+			 map=new google.maps.Map(document.getElementById('map'),{
+			    center: center,
+				zoom: 13
+			 });
+
+       var marker=new google.maps.Marker({
+         position:{lat:25.039863 , lng:121.430949},
+         map:map,
+       });
+
+       var infoWindow= new google.maps.InfoWindow({
+         content:'<p>輔大醫院</p>'
+       });
+       marker.addListener('click',function(){
+         infoWindow.open(map,marker);
+       })
+
+			     request={
+			     location: center,
+				 radius: 8047,
+				 types: ['hospital']
+			};
+			infowindow=new google.maps.InfoWindow();
+
+			service=new google.maps.places.PlacesService(map);
+			service.nearbySearch(request,callback);
+
+			google.maps.event.addListener(map,'rightclick', function(event){
+				map.setCenter(event.latLng)
+				clearResults(markers)
+
+			 var request={
+			   location: event.latLng,
+			   radius: 8047,
+			   types: ['hospital']
+			   };
+
+			   service.nearbySearch(request,callback);
+			})
+		}
+		  function callback(results,status){
+		      if(status==google.maps.places.PlacesServiceStatus.OK){
+			    for(var i=0;i<results.length;i++){
+				   markers.push(createMarker(results[i]));
+				}
+			}
+		}
+
+		  function createMarker(place){
+		     var placeLoc=place.geometry.location;
+			 var marker=new google.maps.Marker({
+			    map:map,
+				position: place.geometry.location
+			});
+
+			google.maps.event.addListener(marker, 'click', function(){
+			   infowindow.setContent(place.name);
+			   infowindow.open(map, this);
+			   });
+			   return marker;
+
+		}
+
+		  function clearResults(markers){
+			for (var m in markers){
+				markers[m].setMap(null)
+			}
+			markers=[]
+		}
+
+		google.maps.event.addDomListener(window,'load',initialize);
+		</script>
+    <title>選擇診所</title>
+
+    <style>
+
+    .map{
+      height:55%;
+      width:50%;
+      position: absolute;
+      top: 13%;
+      left: 45%;
+    }
+
+       /* Accordion */
+      .accordion {
+
+        background-color:#40A89B;
+        color: #000000;
+        cursor: pointer;
+        padding: 20px;
+        width: 12%;
+        border: 1px solid #008975;
+
+        text-align: center;
+        outline: none;
+        font-size: 14px;
+        transition: 0.4s;
+      }
+
+      .active, .accordion:hover {
+        background-color: #00BF9A;
+      }
+
+      .panel {
+        display: none;
+        overflow: hidden;
+      }
+
+      /* horizontal button groups */
+      .btn-group button {
+        background-color: #E4D154; /* background */
+        border: 0.5px solid #D6BA00; /*border */
+        color: black; /* text */
+        padding: 20px 20px; /* Some padding */
+        cursor: pointer; /* Pointer/hand icon */
+        float: left; /* Float the buttons side by side */
+        }
+
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+        overflow: hidden;
+        }
+
+        .btn-group button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+        }
+
+        /* Add a background color on hover */
+        .btn-group button:hover {
+        background-color: #E3A200;
+        }
+
+        /* jump out menu */
+        /* Add padding to container elements */
+        .container {
+          padding: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0, 0.6);
+          padding-top: 5px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+          background-color: #fefefe;
+          margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid #888;
+          width: 85%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+          position: absolute;
+          right: 35px;
+          top: 10px;
+          font-size: 40px;
+          font-weight: bold;
+          color: #f1f1f1;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #f44336;
+          cursor: pointer;
+        }
+
+        /* Clear floats */
+        .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        .p{
+          position: absolute;
+          top: -0.38%;
+          left: -0.91%;
+        }
+
+
+
+    </style>
+
+    <body background="images/bkg_chooseclinic.png">
+
+      <div style="position: absolute ;left:60%; top:380px;">
+          <P>在地圖中點擊右鍵選取您所在的位置</p>
+        </div>
+
+      <div>
+        <a href="index.html"><img class="p" style="cursor:pointer" src="images/btn_backtohome.png"></a>
+      </div>
+
+      <div id="map" class="map">
+			</div>
+
+
+      <div style="margin-left:13.7%;margin-top:13%">
+      <div>
+        <button class="accordion">台北市</button>
+        <div class="btn-group panel">
+          <a href="calendar.html"><button>臺大醫院</button></a>
+          <a href="calendar.html"><button>聯合醫院</button></a>
+          <a href="calendar.html"><button>台北醫大</button></a>
+        </div>
+      </div>
+      <div>
+        <button class="accordion">新北市</button>
+        <div class="btn-group panel">
+          <a href="calendar.html"><button>恩主公醫院</button></a>
+          <a href="calendar.html"><button>陽明醫院</button></a>
+          <a href="calendar.html"><button>輔大醫院</button></a>
+        </div>
+      </div>
+      <div>
+        <button class="accordion">高雄市</button>
+        <div class="btn-group panel">
+          <a href="calendar.html"><button>長庚醫院</button></a>
+          <a href="calendar.html"><button>高醫眼科</button></a>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <script>
+        /* Accordion */
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+
+        // jump out
+          // Get the modal
+          var modal = document.getElementById('id01');
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+
+          var modal2 = document.getElementById('id02');
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal2) {
+              modal2.style.display = "none";
+            }
+          }
+      </script>
+
+
+
+    </body>
+
+
+</html>

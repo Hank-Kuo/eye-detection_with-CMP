@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>eyeinfor</title>
+  <style>
+    /* card button show */
+
+    .container {
+      position: relative;
+      width: 60%;
+      height: auto;
+      display: inline-block;
+
+
+    }
+
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 60%;
+      left: 19.5%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-20%, -20%);
+      text-align: center;
+    }
+
+    .container:hover .image {
+      opacity: 0.5;
+    }
+
+    .container:hover .middle {
+      opacity: 1;
+    }
+
+    .checkmore {
+      background-color: #E4D154;
+      border: none;
+      color: #666560;
+      font-size: 16px;
+      padding: 16px 32px;
+      cursor: pointer;
+    }
+
+    /* scrollbars */
+    .myBox {
+      border: none;
+      padding: 2px;
+      font: 0px sans-serif;
+      overflow: scroll;
+    }
+
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 15px;
+    }
+
+    ::-webkit-scrollbar-track {
+      border: 0.5px solid #E4D154;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #E4D154;
+      border-radius: 10px;
+    }
+
+
+    /* jump out menu */
+    /* Add padding to container elements */
+    .container {
+      padding: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-top: 5px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 2% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 91%;
+      height: auto;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #f44336;
+      cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .p{
+      position: absolute;
+      top: -0.58%;
+      left: -0.89%;
+    }
+
+  </style>
+
+</head>
+
+<body background="images/eyeinfor/bkg_eyeinfor.png">
+  <a href="index.html"><img class="p" style="cursor:pointer" src="images/btn_backtohome.png"></a>
+  <div style="margin-top:15% ;overflow-x:scroll;overflow-y:hidden;white-space:nowrap;">
+
+    <div class="container">
+      <img src="images/eyeinfor/用眼藥的守則.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id01').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>用眼藥的守則</h1>
+          <p>各類眼藥是由不同藥物組成，以醫治不同類型的眼疾。部份眼藥含有類固醇，有可能令眼內壓力升高，引致光眼。<br>
+            只要遵照醫護人員的指示，按時用藥，有助手術成功及早日康復。不要誤用眼藥
+            市面上出售的眼藥，皆有不同的<br>
+            醫療用途。然而未經醫生處方，切勿自行購買及使用。以免藥物的副作用導致其他併發症。<br>
+            注意點:
+            • 每日要按時用藥，開瓶蓋前先搖勻藥水<br>
+            • 確定所用使用藥物的方法、時間、劑量及次數。請留意藥瓶上的標籤指示，將藥物滴或塗在有疾患的眼，切勿弄錯<br>
+            • 部份藥物需存在陰涼的地方或雪柜內<br>
+            • 眼藥水每次一滴，而眼藥膏的份量約一粒米大小已足夠<br>
+            • 請不要用變色或過期的藥物<br>
+            • 凡眼藥開啟一個月後不要使用<br>
+            • 長期使用青光眼藥或類固醇藥物患者，如覆診日期前藥物已用完請往所屬的眼科門診取藥，切勿自行停藥
+          </p>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/熱敷使用法.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id02').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id02" class="modal">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>熱敷的使用法</h1>
+          <p>
+            • 清潔雙手<br>
+            • 預備清潔的熱毛巾<br>
+            • 以手腕測試毛巾的溫度，避免燙傷皮膚<br>
+            • 合上眼睛後，將熱毛巾敷於患眼之上，熱敷約十至十五分鐘<br>
+            • 若毛巾溫度轉冷，可重覆以上步驟<br>
+            • 按醫囑指示，每天可施行三至四次<br>
+            • 熱敷後可依醫生指示滴藥水或搽藥膏<br>
+
+            備註:<br>
+            若曾接受眼瘡切開放膿術，可於二十四小時後施熱敷<br>
+          </p>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/白內障.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id03').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id03" class="modal">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>白內障</h1>
+          <p>
+            簡介<br>
+            當眼睛的晶狀體變得混濁，稱之為白內障。主要是因年齡增長引致，其他成因包括先天性疾病，創傷和糖尿病等<br>
+            症狀因濁化程度而異，一般是視力續漸變得模糊不清。<br>
+
+            治療<br>
+            並非所有白內障需要立刻做手術，只要視力不妨礙工作及日常生活，便可定期到眼科醫生處接受檢查<br>
+            然後決定何時做手術。白內障摘除術是唯一有效醫治白內障的方法。將晶體內不透明的折光物質除去<br>
+            然後植入適當度數的微形鏡片於晶體內。手術成功率非常高。<br>
+
+            準備工作<br>
+            • 需簽署同意書<br>
+            • 如是局部麻醉，不需禁食。如需全身麻醉，則需禁食。這視乎麻醉科醫生的決定<br>
+
+            手術後的護理<br>
+            • 初期應避免受震盪，不宜俯首拾物<br>
+            • 依時用藥及按時覆診<br>
+            • 需保持個人衛生<br>
+            • 切勿用手擦眼睛<br>
+            • 要用消毒藥棉球沾濕凍開水清潔眼瞼<br>
+            • 洗頭時，頭要向後抑，避免洗頭水倒流入眼內<br>
+            • 要多吃水果和蔬菜以防便秘<br>
+            • 睡覺時，不要睡向手術側以免壓著傷口。手術後一星期內，睡前要用眼罩保護眼睛<br>
+            • 如需作任何運動，應先請教醫生<br>
+            • 可觀看電視及閱讀，如覺得光線刺眼，可戴上太陽眼鏡遮光<br>
+            • 如有緊急眼睛病情變化，可提前覆診，請致電所屬眼科診所。<br>
+
+            併發症<br>
+            • 眼內出血、青光眼、視網膜脫落、內眼或全眼球發炎，切口裂開和虹膜脫出等<br>
+            • 即使手術本身相當成力，若患者有其他眼疾如青光眼、黃斑點退化、視神經萎縮、糖尿眼底等，視力亦不能恢復常<br>
+
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/老年性黃斑病變.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id04').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id04" class="modal">
+      <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>老年性黃斑病變</h1>
+          <p>
+            簡介<br>
+            老年性黃斑病變是一種慢性疾病，是視網膜黃斑部退化的表現。黃斑部出現滲漏、出血、有新生血管生長及結疤。<br>
+            亦是五十歲以上之人士，弱視致盲原因之一，隨著年齡增加，發病機會也相應率更高達三成。<br>
+
+            臨床表現分類有二:<br>
+            1. 乾性黃斑病變<br>
+            大部份病人只是影響到視網膜黃斑部，視力續漸緩慢減退，多數有輕微視力障礙，目前尚未有根治的治療方法。<br>
+            2. 濕性黃斑病變<br>
+            黃斑部出現滲漏、出血、生長新生血管及結疤。病徵包括視物其形有變，視野中心有暗點，視力突然驟降，甚至失明: 一般情況嚴重，難於治療。<br>
+
+            檢查<br>
+            有部份乾性黃斑病會逐漸演變成濕性黃斑病變。因此乾性黃斑病人需要經常利用阿姆斯勒柵格檢查視<br>
+            如發現線條變形或有暗點，應該盡早往眼科門診求診。<br>
+
+            治療<br>
+            治療方案是因個別需要而定，包括定期檢、激光治療、光動力療法或施行手術。濕性黃斑病變的治療效果，現時仍欠理想。<br>
+            一般由於發病較遲，加上病情反覆，難於控制進度。治療的目的是減慢惡化的速度，但只有極少數病人會因此病致全盲<br>
+            病人可透過輔助儀器(如光學上的輔助儀器、低視力輔助器材及特別技能訓練) 盡量使用僅存的視力生活。<br>
+            長期心理和社交上的支持也很重要。
+
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/屈光不正.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id05').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id05" class="modal">
+      <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>屈光不正</h1>
+          <p>
+            近視、遠視、散光、老視(老花)<br>
+
+            簡介<br>
+
+            矯正屈光的方法包括戴眼鏡、戴隱形眼鏡或激光角膜屈光手術，均各有其優缺點。一般來說，戴眼鏡最為基本及簡單。<br>
+            如需要進行手術矯正屈光，應先了解手術的過程和手術可能引致的併發症，才作決。病人對屈光矯正的選擇取決於<br>
+            近視程度的深淺、職對、對美觀的要求等。政府眼科診所現時不提供常規屈光手術。<br>
+
+            近視<br>
+            在調節鬆弛的狀態下，平衡光線不能聚焦於視網膜，而是聚焦於視網膜之前，以至遠看的目標不清楚。<br>
+            治療方法<br>
+            • 可戴眼鏡 (凹透鏡)<br>
+            • 可戴隱形眼鏡 (角膜接觸鏡)<br>
+            • 矯正屈光手術包括有:<br>
+            ◦ 角膜屈光手術<br>
+            ◦ 準分子激光角膜基質的矯視手術(LASIK)<br>
+            ◦ 晶體摘除術並植入人工晶體(極深度近視眼才考慮此手術)<br>
+
+            遠視<br>
+
+            在調節鬆弛狀態下，平衡光線不能聚焦於視網膜，而聚焦於視網膜之後。如青少年患有輕度遠視，由於調節力較強<br>
+            可將平衡光線聚焦在視網膜上，其視力仍清楚。疲勞或年齡增長均會令調節力下降，則遠近視力都不會清楚<br>
+            甚至出現提早老花現象而需要矯正。<br>
+
+            治療方法<br>
+            • 可戴眼鏡 (凸透鏡)<br>
+            • 可戴隱形眼鏡(角膜接觸鏡)<br>
+            • 激光手術<br>
+
+            散光<br>
+            若眼球各徑線的屈光不相同。平衡光線就不能在視網膜形成，以至視物模糊，眼睛容易感到疲勞<br>
+            若只有輕度散光而視力不模糊和沒有眼睛疲勞，則不需戴眼鏡。<br>
+
+            老視(老花)<br>
+            隨著年齡增長，40-45歲之後開始出現老花現象。這是由於晶體逐漸硬化，彈性降低而引致眼睛近距離<br>
+            視力模糊(例如閱讀)，需戴凸透鏡以矯正近距離視力。<br>
+
+
+
+
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/青光眼.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id06').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id06" class="modal">
+      <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>青光眼</h1>
+          <p>
+            簡介<br>
+            當眼球內前房水(眼球內的液體)分泌及吸收不平衡，眼球內的壓力會增高，引致視神經受損、視野收窄及視力下降<br>
+            形成青光眼。青光眼是一種可怕的眼疾，若未能及時醫治，失明的機會非常大，但能及早發現，控制過高的眼壓，<br>
+            則可保存剩餘的視力。臨床上青光眼可分為急性、慢性、先天性及繼發性四類。其病徵和醫治方法各自不同。<br>
+
+
+            急性青光眼
+            通常是突發性，視力在短時間內大減，看燈光有彩虹圈圈圍繞、眼紅，角膜混濁、眼睛劇痛，並常連帶頭痛<br>
+            噁心及嘔吐等。若左眼患急性青光眼，五年內右眼發病的機會可大過百分之五十。因此當証實一只眼患急性<br>
+            青光眼，應盡快檢查另外一只眼及接受預防性治療。<br>
+
+            治療<br>
+            醫生會盡快用藥物控制不正常的眼壓，減少房水的分泌及增加輸出。如病情有需要<br>
+            亦會建議施行激光治療或手術控制眼壓。<br>
+
+            慢性青光眼<br>
+            慢性青光眼的患病機會是隨年齡加，每一百個四十歲以上的人，便有一至兩個會患上慢性青光眼。如直系親屬患有<br>
+            慢性青光眼、大近視或糖尿病，患上慢性青光眼的機會會相對地較高。因此應定期檢查眼睛。特別是在中年齡<br>
+            (35-40歲)後。早期的慢性青光眼病徵並不明顯，只有小部份有視力減退的現象。及後，由於視神經有一定的損壞<br>
+            視野便日漸變窄。視野中心以外的影像甚至看不見。好像拿著竹筒看東西一樣。走路也經常撞著旁邊桌椅物件，終而完全失明。<br>
+
+            治療<br>
+            主要是用藥物來控制眼壓，以免視神經進一步受損。否則醫生可能採用激光或手術治療，把房水引流。<br>
+
+            先天性青光眼<br>
+            這是一種天生的眼疾，由於眼前房角上的濾簾不暢通，使房水排出受阻。大多數的病嬰在一歲前已發病。病徵包括<br>
+            患眼眼變大、角膜混濁不清、常流眼水和畏光。父母應盡早帶嬰兒往求診，以防止永久失明。<br>
+
+            繼發性青光眼<br>
+            其他的疾病繼發眼壓過高，如過熟的白內障、虹膜炎、眼球內部出血、腫瘤、外傷、手術後的併發症、不適當地使用<br>
+            激素及眼藥水等。要先徹底治理基本的疾病。需及早用藥物或施行手術控制眼壓。<br>
+
+
+            護理和建議<br>
+            • 若發現有高血壓、血脂或膽固醇過高，應該通知醫生，以便訂合適的治療方案<br>
+            • 少量的茶、咖啡和酒不會使青光眼惡化<br>
+            • 需按時用藥及定期覆診，確保眼壓受到控制，則可保存視力<br>
+
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/紅眼症.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id07').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id07" class="modal">
+      <span onclick="document.getElementById('id07').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>傳染性急性結膜炎</h1>
+          <p>
+            簡介
+            結膜炎是覆蓋著眼瞼內方及眼球正面的薄(即結膜)發炎。結膜炎有幾種形式，最常見的傳染性急性結膜炎<br>
+            俗稱「紅眼症」，由各種不同的過濾性病毒或細菌染所致。潛伏期一般是1-2日，視乎不同病原而異。<br>
+            • 初期病徵: 眼睛刺癢、有異物感、結膜充血、或眼部分泌物增加<br>
+            • 後期病徵: 畏光、流淚、眼瞼顯著腫脹、結膜嚴重水腫或出血<br>
+            • 雙眼可以同時或先後發病<br>
+            • 當眼部分泌物及充血消失後，表示病人經已康復<br>
+            • 病情因不同病原而異，一般會在一至二星期內可痊癒<br>
+
+            護理及建議<br>
+            • 應盡快求診，須按醫生處方用藥及休息<br>
+            • 避免強光刺激眼部<br>
+            • 傳染性急性結膜炎雖然不會造成明顯視力障礙，但由於傳染性極強，預防工作是非常重要<br>
+
+            預防方法包活:
+            • 須注意個人衛生，常保持雙手清潔及避免用手拭眼，用藥前後必需洗手<br>
+            • 切勿與家人共用洗面用具，例如:毛巾、面盆等。應把個人用品分開放置<br>
+            • 患者使用過的毛巾、洗面用具及接觸過眼部分泌物的物件需用水煮30分鐘消毒<br>
+            • 不要使用公共設施，例如泳池等，以免將疾病傳染他人<br>
+
+            備註<br>
+            結膜炎除了可由病毒或細菌感染引起外，亦可因對藥物敏感或受到化學物品的刺激所導致，例如: 隱形眼鏡清潔液<br>
+            氯氣、殺蟲藥或其他空氣污染物等。因此應避免接觸引致過敏的物品和在有需要時戴護目鏡。若眼睛已接觸到刺激物品<br>
+            應立刻用水沖洗眼睛和求醫治理，避免發生併發症，影響視力。<br>
+
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/飛蚊症.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id08').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id08" class="modal">
+      <span onclick="document.getElementById('id08').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>飛蚊症</h1>
+          <p>
+            甚麼是「飛蚊症」?<br>
+            看東西時感覺有不同形狀或大小的黑點或暗影在眼前飄動，在光線充足的背景上尤其顯著，飛蚊是由於眼球的玻璃體變混濁或有飄浮物引致。<br>
+
+            「飛蚊症」的成因<br>
+            飛蚊症只是一種症狀，有多種潛在性的成因，可發生於不同年紀，甚至持續多年無任何變化。通常並不會影響視力。<br>
+
+            治療需要嗎?<br>
+            並無特別有效的方法可除去症狀，且大多數會繼續存在。應由眼科醫生檢查玻璃狀體及視網膜，若有視網膜裂孔、退化及脫離等現象，需進行針對性治療，然而大多數病人的玻璃體及視網膜沒有明顯的病理改變。<br>
+
+            注意事項<br>
+            「飛蚊症」可能是嚴重眼睛疾病的先兆，例如視網膜退化、視網膜裂孔、視網膜脫離、玻璃體出血或虹膜炎等疾病。<br>
+            如有下列症狀，辦公時間請立刻往眼科診所診治，而非辦公時間可到就近急症室求診<br>
+            • 感覺或看見大量「飛蚊」<br>
+            • 感覺台看見有常持續的閃光現象<br>
+            • 視力突然減退<br>
+            • 部份視野突然模糊或減退，像有黑幕從視野周邊範圍擴散向視野中心<br>
+
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="margin-left:-40%">
+      <img src="images/eyeinfor/斜視.png" class="image" style="width:35%">
+      <div class="middle">
+        <button class="checkmore" onclick="document.getElementById('id09').style.display='block'">查看更多</button>
+      </div>
+    </div>
+    <div id="id09" class="modal">
+      <span onclick="document.getElementById('id09').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <div class="container">
+          <h1>斜視</h1>
+          <p>
+            簡介<br>
+
+            眼球視軸不正，雙眼不能同時注視同一目標，稱為斜視。這是由於雙眼的眼外肌肉未能協調控制雙眼的位置。<br>
+            根據偏差的方向，斜視眼可分為「上下不協調」和「左右不協調」兩種。左右不協調斜視眼又可分為內斜視和外斜視。<br>
+            內斜視: 即一般人俗稱的「鬥雞眼」，是指眼睛向內(或鼻樑)傾移。<br>
+            外斜視: 即指眼睛向外偏移，遠離正常位置。<br>
+            斜視眼又可以分為有持續型和間歇型，間歇型只在疲倦、身體不適或不專注時才有斜視的現象。<br>
+
+            形成的因素<br>
+            包括先天性或後天性。後天性的因素有很多，如意外或疾病影響眼神經或視力、眼球肌肉疾病或雙眼屈光(遠/近視)不協調等。<br>
+
+            斜視眼影響<br>
+            斜視眼除了影響外觀，也會使患者喪失「立體視像」(STEREOSCOPIC VISION)是由於腦部對斜視眼所接收的影響訊息<br>
+            加以抑制。若斜視眼發生在嬰兒或兒童時期而沒有及時處理，可能導致弱視眼，俗稱「惰性眼」(LAZY EYE)。<br>
+
+            治療<br>
+            愈早得到適當的治療，影響視力愈少，特別是在幼兒階段。如有任何懷疑，可請教你的家庭或眼科醫生。糾正斜視的方法包括:<br>
+            • 眼部運動，可以適當調整視軸<br>
+            • 佩帶合適的眼鏡可改善雙眼的屈光不協調<br>
+            • 若孩子患有弱視，可以遮蓋視力較好的眼睛，有助改善斜視眼的弱視。但必須經過眼科醫生和視覺矯正師(ORTHOPTIST)的指導，否則可能加重斜視和弱視<br>
+            • 手術治療<br>
+
+            正確的觀念<br>
+            • 絕大部份斜視不能單靠藥物治癒<br>
+            • 斜視不會因年紀增長而消失<br>
+            • 如幼嬰吃母乳時兩隻眼球內聚並不是斜視<br>
+            • 近視、遠視和斜視是三種不同的眼睛毛病<br>
+            • 把沒有斜視的眼遮蓋，可以防止演變成弱視，但不可糾正斜視<br>
+            • 沒有任何食物或維他命可改善斜視<br>
+            • 課室內的坐位位置不會導致或加深斜視眼<br>
+
+          </p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script>
+    // jump out
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+
+
+</body>
+
+
+
+</html>

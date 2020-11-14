@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>首頁</title>
+  <script type="text/javascript" src="index.js"></script>
+  <style>
+    .div {
+      height: 126px;
+      width: 300px;
+      position: absolute;
+      top: 50px;
+      left: 100px;
+    }
+
+    .eyeleft {
+      top: 212px;
+      left: 195px;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .eyeright {
+      top: 212px;
+      left: 375px;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .button {
+      border-radius: 2px;
+      background-color: #FFBA00;
+      border: none;
+      color: #666560;
+      text-align: center;
+      font-size: 24px;
+      height: 120px;
+      width: 212px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+      box-shadow: 0 5px #999;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.4s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 50;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
+    .button:active {
+      box-shadow: 0 1px #666;
+      transform: translateY(14px);
+    }
+
+    .button2 {
+      height: 120px;
+      width: 165px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #606060;
+      background-color: #FFE45F;
+      border: none;
+      border-radius: 2px;
+      box-shadow: 0 5px #999;
+    }
+
+    .button2:hover {
+      background-color: #FFD400
+    }
+
+    .button2:active {
+      background-color: #FFE45F;
+      box-shadow: 0 1px #666;
+      transform: translateY(8px);
+    }
+
+
+    .p {
+      position: absolute;
+      top: -3.6px;
+      left: -8.6px;
+    }
+
+    .go {
+      position: absolute;
+      cursor: pointer;
+      top: 50px;
+      left: 492.5px;
+    }
+
+    .line {
+      position: absolute;
+      cursor: pointer;
+      top: 280px;
+      left: 525px;
+    }
+    .contectus {
+      position: absolute;
+      cursor: pointer;
+      top: 275px;
+      left: 790px;
+
+    }
+
+    .history {
+      position: absolute;
+      cursor: pointer;
+      top: 320px;
+      left: 425px;
+    }
+
+    a {color:black;
+    text-decoration:none;
+    }
+
+    /*jumpout box*/
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 35px;
+      top: -10px;
+      color: #ffffff;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+
+  </style>
+
+</head>
+
+<body background="images/bkg_home2.png">
+
+  <div class="div">
+    <h1 style="font-family:Microsoft JhengHei;" id="textname"></h1>
+  </div>
+  <div class="eyeleft">
+    <a href="history.html"><h1 style="font-family:Microsoft JhengHei;" id="eye_left"></h1></a>
+  </div>
+  <div class="eyeright">
+    <a href="history.html"><h1 style="font-family:Microsoft JhengHei;" id="eye_right"></h1></a>
+  </div>
+  <div class="history">
+    <a href="history.html"><u>
+        <h5>歷史紀錄</h5>
+      </u></a>
+  </div>
+  <div class="go">
+    <img style="width:87.5%" src="images\掛號領藥由此去.gif">
+  </div>
+
+  <div class="line">
+  <img onclick="document.getElementById('id01').style.display='block'" style="width:auto;" style="width:80%" src="images\addlinefriend.png">
+    <div id="id01" class="modal">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="images/lineQR.png" >
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+    <a href="contectus.html"><img class="contectus" src="images/healthelf.png" title="護眼小幫手" style="width:9%;height:16%;opacity: 0.7"></a>
+
+
+
+  <a href="eyetest.html"><button class="button" id="starttest" style="font-family:Microsoft JhengHei;margin-left:7.6%;margin-top:40%"><span>智慧驗光 </span></button></a>
+  <a href="eyeinfor.html"><button class="button2" id="btn_relaxureye" style="font-family:Microsoft JhengHei;margin-left:25.3%">病理知識</button></a>
+  <a href="registered.html"><button class="button2" id="btn_registration" style="font-family:Microsoft JhengHei;margin-left:3%">眼科掛號</button></a>
+  <div class="p">
+    <img  style="cursor:pointer" onclick="logout()" src="images/btn_logout1.png">
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB3RG9-49l74BOv0FEyLn5sHI6duZlSpwQ",
+      authDomain: "eye-detection-6fd57.firebaseapp.com",
+      databaseURL: "https://eye-detection-6fd57.firebaseio.com",
+      projectId: "eye-detection-6fd57",
+      storageBucket: "eye-detection-6fd57.appspot.com",
+      messagingSenderId: "882742229686"
+    };
+    firebase.initializeApp(config);
+    const auth=firebase.auth();
+    const db =firebase.firestore();
+
+
+
+
+    //jumpout images
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+  </script>
+
+  <script src="login.js"></script>
+
+
+</body>
+
+</html>

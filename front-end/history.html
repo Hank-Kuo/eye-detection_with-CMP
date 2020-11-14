@@ -1,0 +1,349 @@
+<html>
+
+<head>
+  <style>
+    .div_left1 {
+      position: absolute;
+      top: 40px;
+      left: 340px;
+    }
+
+    .div_left2 {
+      position: absolute;
+      top: 40px;
+      left: 530px;
+    }
+
+    .div_left3 {
+      position: absolute;
+      top: 40px;
+      left: 715px;
+    }
+
+    .div_right1 {
+      position: absolute;
+      top: 40PX;
+      left: 420px;
+    }
+
+    .div_right2 {
+      position: absolute;
+      top: 40px;
+      left: 605px;
+    }
+
+    .div_right3 {
+      position: absolute;
+      top: 40px;
+      left: 790px;
+    }
+
+
+    .div_flash_left1 {
+      position: absolute;
+      top: 140px;
+      left: 330px;
+    }
+
+    .div_flash_left2 {
+      position: absolute;
+      top: 140px;
+      left: 515px;
+    }
+
+    .div_flash_left3 {
+      position: absolute;
+      top: 140px;
+      left: 700px;
+    }
+
+    .div_flash_right1 {
+      position: absolute;
+      top: 140px;
+      left: 410px;
+    }
+
+    .div_flash_right2 {
+      position: absolute;
+      top: 140px;
+      left: 595px;
+    }
+
+    .div_flash_right3 {
+      position: absolute;
+      top: 140px;
+      left: 780px;
+    }
+
+    .div_yellow_left1 {
+      position: absolute;
+      top: 245px;
+      left: 370px;
+    }
+
+
+
+    .div_yellow_left2 {
+      position: absolute;
+      top: 245px;
+      left: 555px;
+    }
+
+    .div_yellow_left3 {
+      position: absolute;
+      top: 245px;
+      left: 740px;
+    }
+
+
+    .div_fly_left1 {
+      position: absolute;
+      top: 345px;
+      left: 370px;
+    }
+
+
+
+    .div_fly_left2 {
+      position: absolute;
+      top: 345px;
+      left: 555px;
+    }
+
+
+    .div_fly_left3 {
+      position: absolute;
+      top: 345px;
+      left: 740px;
+    }
+
+
+
+    .div_blind_left1 {
+      position: absolute;
+      top: 440px;
+      left: 370px;
+    }
+
+
+
+    .div_blind_left2 {
+      position: absolute;
+      top: 440px;
+      left: 555px;
+    }
+
+
+
+    .div_blind_left3 {
+      position: absolute;
+      top: 440px;
+      left: 740px;
+    }
+
+
+
+
+    .p {
+      position: absolute;
+      top: -4;
+      left: -9;
+    }
+
+    .info {
+      position: absolute;
+      cursor: pointer;
+      top: 10;
+      right: 30;
+
+    }
+
+    h1,
+    h2 {
+      font-family: Microsoft JhengHei;
+    }
+
+
+    /*jumpout box*/
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 35px;
+      top: -10px;
+      color: #ffffff;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body background="images/bkg_history.png">
+  <div>
+    <a href="index.html"><img class="p" style="cursor:pointer" src="images/btn_backtohome.png"></a>
+  </div>
+  <div>
+    <img onclick="document.getElementById('id01').style.display='block'" class="info" style="cursor:pointer" src="images/btn_scorerule.png">
+    <div id="id01" class="modal">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="images/scorerule.png">
+      </div>
+    </div>
+
+  </div>
+  <div class="div_left1">
+    <h1 id="eye_left1"></h1>
+  </div>
+  <div class="div_left2">
+    <h1 id="eye_left2"></h1>
+  </div>
+  <div class="div_left3">
+    <h1 id="eye_left3"></h1>
+  </div>
+
+  <div class="div_right1">
+    <h1 id="eye_right1"></h1>
+  </div>
+  <div class="div_right2">
+    <h1 id="eye_right2"></h1>
+  </div>
+  <div class="div_right3">
+    <h1 id="eye_right3"></h1>
+  </div>
+
+  <div class="div_flash_left1">
+    <h2 id="eye_flash_left1"></h2>
+  </div>
+  <div class="div_flash_left2">
+    <h2 id="eye_flash_left2"></h2>
+  </div>
+  <div class="div_flash_left3">
+    <h2 id="eye_flash_left3"></h2>
+  </div>
+  <div class="div_flash_right1">
+    <h2 id="eye_flash_right1"></h2>
+  </div>
+  <div class="div_flash_right2">
+    <h2 id="eye_flash_right2"></h2>
+  </div>
+  <div class="div_flash_right3">
+    <h2 id="eye_flash_right3"></h2>
+  </div>
+  <div class="div_yellow_left1">
+    <h2 id="eye_yello_left1"></h2>
+  </div>
+  <div class="div_yellow_left2">
+    <h2 id="eye_yello_left2"></h2>
+  </div>
+
+  <div class="div_yellow_left3">
+    <h2 id="eye_yello_left3"></h2>
+  </div>
+  <div class="div_fly_left1">
+    <h2 id="eye_fly_left1"></h2>
+  </div>
+
+  <div class="div_fly_left2">
+    <h2 id="eye_fly_left2"></h2>
+  </div>
+
+  <div class="div_fly_left3">
+    <h2 id="eye_fly_left3"></h2>
+  </div>
+
+  <div class="div_blind_left1">
+    <h2 id="eye_blind_left1"></h2>
+  </div>
+
+  <div class="div_blind_left2">
+    <h2 id="eye_blind_left2"></h2>
+  </div>
+  <div class="div_blind_left3">
+    <h2 id="eye_blind_left3"></h2>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB3RG9-49l74BOv0FEyLn5sHI6duZlSpwQ",
+      authDomain: "eye-detection-6fd57.firebaseapp.com",
+      databaseURL: "https://eye-detection-6fd57.firebaseio.com",
+      projectId: "eye-detection-6fd57",
+      storageBucket: "eye-detection-6fd57.appspot.com",
+      messagingSenderId: "882742229686"
+    };
+    firebase.initializeApp(config);
+
+
+
+    //jumpout images
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+
+  <script src="history.js"></script>
+</body>
+
+</html>

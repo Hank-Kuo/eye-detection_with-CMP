@@ -1,0 +1,136 @@
+<html>
+
+<head>
+  <title>回饋我們</title>
+  <style>
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    input[type=submit]:hover {
+      background-color: #FDE01C;
+    }
+
+    /* .h1{
+      position: absolute;
+      top: 10px;
+
+      font-size: 20px
+    } */
+
+    .p {
+      position: absolute;
+      top: -1.6px;
+      left: -8.6px;
+    }
+
+    .bl {
+      position: absolute;
+      cursor: pointer;
+      top: 120px;
+      left: 150px;
+    }
+
+    .br {
+      position: absolute;
+      cursor: pointer;
+      top: 120px;
+      left: 565px;
+    }
+
+    .timeinput {
+      position: absolute;
+      top: 285px;
+      left: 230px;
+
+    }
+
+    #dialogoverlay{
+      display: none;
+      opacity: .8;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      background: #FFF;
+      width: 100%;
+      z-index: 10;
+    }
+    #dialogbox{
+      display: none;
+      position: fixed;
+      background: #AAAAAA;
+      border-radius:1px;
+      width:450px;
+      z-index: 10;
+
+    }
+    #dialogbox > div{ background:	#AAAAAA; margin:3px; }
+    #dialogbox > div > #dialogboxhead{ background: 	#FFFFFF	; font-size:19px; padding:10px; color:	#000000; }
+    #dialogbox > div > #dialogboxbody{ background:	#FFFFFF		; padding:10px;font-size:19px; color:	#000000;font-family:Microsoft JhengHei; }
+    #dialogbox > div > #dialogboxfoot{ background: 		#DDDDDD; padding:10px; text-align:right; }
+
+
+  </style>
+</head>
+
+<body background="images/bkg_healthelf.png">
+  <a href="index.html"><img class="p" style="cursor:pointer" src="images/btn_backtohome.png"></a> 
+
+  <!-- <a href=""><img class="bl" src="images/btn_eyeremind.png" title="按一下開始"></a> -->
+  <button onclick="test()"><img class="br" src="images/btn_eyerelax.png" title="按一下開始" ></button>
+  <!-- <input type="time" class="timeinput" id="time" style="float:center;width:15%;size:16;" placeholder="00:00" value="16:15:32"> -->
+  <button id="timebtn" onclick="countdownTimeStart()"><img class="bl" src="images/btn_eyeremind.png" title="按一下開始"></button>
+  <div class="timeinput" >
+    <h1 class="h1" id="demo" style="font-family:Microsoft JhengHei;" ></h1>
+    </div>
+
+
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+      <div>
+        <div id="dialogboxhead"></div>
+        <div id="dialogboxbody"></div>
+        <div id="dialogboxfoot"></div>
+      </div>
+    </div>
+
+
+<script>
+function CustomAlert(){
+    this.render = function(){
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogoverlay = document.getElementById('dialogoverlay');
+        var dialogbox = document.getElementById('dialogbox');
+        dialogoverlay.style.display = "block";
+        dialogoverlay.style.height = winH+"px";
+        dialogbox.style.left = "30%";
+        dialogbox.style.top = "175px";
+        dialogbox.style.display = "block";
+        document.getElementById('dialogboxhead').innerHTML = '';
+        document.getElementById('dialogboxbody').innerHTML = "已經過30分鐘請休息一下";
+        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+    }
+  this.ok = function(){
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById('dialogoverlay').style.display = "none";
+
+  }
+}
+var Alert = new CustomAlert();
+</script>
+
+
+
+    <script src="contactus.js"></script>
+
+
+</body>
+
+</html>
